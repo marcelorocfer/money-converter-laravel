@@ -36,6 +36,7 @@ class MoneyConvertController extends Controller
     {
         $data = $this->model
             ->where('user_id', Auth::id())
+            ->orderBy('id', 'desc')
             ->get();
         return response()->json($data, 200);
     }
